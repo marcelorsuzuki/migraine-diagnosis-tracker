@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+     http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+	<persistence-unit name="migraine">
+
+		<!-- provedor/implementacao do JPA -->
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<!-- entidade mapeada -->
+		<class>br.unifesp.migrainetrack.model.State</class>
+		<class>br.unifesp.migrainetrack.model.City</class>
+		<class>br.unifesp.migrainetrack.model.Crisis</class>
+		<class>br.unifesp.migrainetrack.model.Disease</class>
+		<class>br.unifesp.migrainetrack.model.History</class>
+		<class>br.unifesp.migrainetrack.model.MaritalStatus</class>
+		<class>br.unifesp.migrainetrack.model.Patient</class>
+
+		<properties>
+			<!-- dados da conexao -->
+			<property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=Migraine;integratedSecurity=true;" />
+
+			<!-- propriedades do hibernate -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+
+			<!-- atualiza o banco, gera as tabelas se for preciso -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+
+		</properties>
+	</persistence-unit>
+</persistence>
