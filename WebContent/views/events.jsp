@@ -31,19 +31,11 @@
 					
 				<li id="li_2" >
 					<label class="description" for="element_2">Date </label>
-					<span>
-						<input id="element_2_1" name="element_2_1" class="element text" size="2" maxlength="2" value="" type="text" /> /
-						<label for="element_2_1">MM</label>
+				    <span>
+				 		<input id="element_2_3" name="element_2_3" class="element text" size="10" maxlength="10" value="" type="text" />
+						<label for="element_2_3">MM/DD/YYYY</label>
 					</span>
-					<span>
-						<input id="element_2_2" name="element_2_2" class="element text" size="2" maxlength="2" value="" type="text" /> /
-						<label for="element_2_2">DD</label>
-					</span>
-					<span>
-				 		<input id="element_2_3" name="element_2_3" class="element text" size="4" maxlength="4" value="" type="text" />
-						<label for="element_2_3">YYYY</label>
-					</span>
-				
+									
 					<span id="calendar_2">
 						<img id="cal_img_2" class="datepicker" src="img/calendar.gif" alt="Pick a date." />	
 					</span>
