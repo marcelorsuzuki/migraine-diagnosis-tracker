@@ -5,11 +5,14 @@ import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 /**
@@ -20,7 +23,7 @@ import javax.persistence.TemporalType;
 public class History implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	@Id @GeneratedValue
 	@Column(name="id_his")
 	private int id;
 
@@ -33,6 +36,7 @@ public class History implements Serializable {
 
 	@Column(name="dt_cri")
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Calendar dateCrisis;
 
 	private String lunch;

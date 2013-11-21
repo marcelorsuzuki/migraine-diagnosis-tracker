@@ -1804,6 +1804,12 @@ window._dynarch_popupCalendar = null;
 function selectDate(cal) {
 	var p = cal.params;
 	var update = (cal.dateClicked || p.electric);
+	
+	field = p.inputField.id;
+	document.getElementById(field).value = cal.date.print('%e') + '/' +
+	                                       cal.date.print('%m') + '/' +
+	                                       cal.date.print('%Y');
+	/*
 	year = p.inputField.id;
 	
 	day = p.baseField + '_2';
@@ -1812,6 +1818,7 @@ function selectDate(cal) {
 	document.getElementById(month).value = cal.date.print('%m');
 	document.getElementById(day).value = cal.date.print('%e');
 	document.getElementById(year).value = cal.date.print('%Y');
+	*/
 }
 
 function selectEuropeDate(cal) {

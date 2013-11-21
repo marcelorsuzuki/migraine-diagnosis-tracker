@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Patient {
 	
@@ -24,6 +26,7 @@ public class Patient {
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name="dt_birth")
+	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Calendar birthday;
 	
 	private String gender;
