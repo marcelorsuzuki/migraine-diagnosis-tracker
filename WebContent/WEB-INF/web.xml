@@ -6,7 +6,7 @@
 
 	<display-name>Migraine Diagnosis Tracker</display-name>
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>/view/login.jsp</welcome-file>
 	</welcome-file-list>
   
 	<servlet>
