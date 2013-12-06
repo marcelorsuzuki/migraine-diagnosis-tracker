@@ -14,7 +14,9 @@
 	
 		<h1><a>Patient Registration</a></h1>
 		
-		<form id="form_743687" class="appnitro"  method="post" action="">
+		<jsp:include page="menu_inc.jsp" />
+		
+		<form id="form_743687" class="appnitro"  method="post" action="patient-save">
 		
 			<div class="form_description">
 				<h2>Patient Registration</h2>
@@ -25,7 +27,7 @@
 				<li id="li_1" >
 					<label class="description" for="element_1">Name </label>
 					<div>
-						<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/> 
+						<input id="element_1" name="name" class="element text medium" type="text" maxlength="255" value=""/> 
 					</div> 
 				</li>		
 				
@@ -34,7 +36,7 @@
 					<label class="description" for="element_2">Birthdate </label>
 					
 					<span>
-				 		<input id="element_2_3" name="element_2_3" class="element text" size="10" maxlength="10" value="" type="text" />
+				 		<input id="element_2_3" name="birthday" class="element text" size="10" maxlength="10" value="" type="text" />
 						<label for="element_2_3">MM/DD/YYYY</label>
 					</span>
 						
@@ -58,9 +60,9 @@
 				<li id="li_14" >
 					<label class="description" for="element_14">Gender </label>
 					<span>
-						<input id="element_14_1" name="element_14" class="element radio" type="radio" value="1" />
+						<input id="element_14_1" name="gender" class="element radio" type="radio" value="m" />
 						<label class="choice" for="element_14_1">Male</label>
-						<input id="element_14_2" name="element_14" class="element radio" type="radio" value="2" />
+						<input id="element_14_2" name="gender" class="element radio" type="radio" value="f" />
 						<label class="choice" for="element_14_2">Female</label>
 					</span> 
 				</li>		
@@ -68,7 +70,7 @@
 				<li id="li_15" >
 					<label class="description" for="element_15">Marital Status </label>
 					<div>
-						<select class="element select small" id="element_15" name="element_15"> 
+						<select class="element select small" id="element_15" name="maritalStatus"> 
 							<option value="" selected="selected"></option>
 							<option value="1" >Single</option>
 							<option value="2" >Married</option>
@@ -82,38 +84,39 @@
 				<li id="li_3" >
 					<label class="description" for="element_3">Occupation </label>
 					<div>
-						<input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value=""/> 
+						<input id="element_3" name="job" class="element text medium" type="text" maxlength="255" value=""/> 
 					</div> 
 				</li>		
 				
 				<li id="li_4" >
 					<label class="description" for="element_4">Address 1 </label>
 					<div>
-						<input id="element_4" name="element_4" class="element text large" type="text" maxlength="255" value=""/> 
+						<input id="element_4" name="address1" class="element text large" type="text" maxlength="255" value=""/> 
 					</div> 
 				</li>		
 				
 				<li id="li_5" >
 					<label class="description" for="element_5">Address 2 </label>
 					<div>
-						<input id="element_5" name="element_5" class="element text large" type="text" maxlength="255" value=""/> 
+						<input id="element_5" name="address2" class="element text large" type="text" maxlength="255" value=""/> 
 					</div> 
 				</li>		
 				
 				<li id="li_6" >
 					<label class="description" for="element_6">Address 3 </label>
 					<div>
-						<input id="element_6" name="element_6" class="element text large" type="text" maxlength="255" value=""/> 
+						<input id="element_6" name="address3" class="element text large" type="text" maxlength="255" value=""/> 
 					</div> 
 				</li>		
 				
 				<li id="li_7" >
 					<label class="description" for="element_7">Zip Code </label>
 					<div>
-						<input id="element_7" name="element_7" class="element text medium" type="text" maxlength="255" value=""/> 
+						<input id="element_7" name="zipCode" class="element text medium" type="text" maxlength="255" value=""/> 
 					</div> 
 				</li>		
 				
+				<!-- 
 				<li id="li_16" >
 					<label class="description" for="element_16">State </label>
 					<div>
@@ -148,19 +151,25 @@
 				
 						</select>
 					</div> 
-				</li>		
+				</li>	
+				 	
 				
 				<li id="li_8" >
 					<label class="description" for="element_8">City </label>
 					<div>
 						<input id="element_8" name="element_8" class="element text medium" type="text" maxlength="255" value=""/> 
 					</div> 
-				</li>		
+				</li>
+				-->		
 				
 				<li id="li_9" >
 					<label class="description" for="element_9">Phone </label>
+					<div>
+						<input id="element_9_1" name="phone" class="element text" size="15"  value="" type="text" />
+					</div>
+					<!-- 
 					<span>
-						<input id="element_9_1" name="element_9_1" class="element text" size="2" maxlength="2" value="" type="text" /> 
+						<input id="element_9_1" name="phone" class="element text" size="2" maxlength="2" value="" type="text" /> 
 						-
 						<label for="element_9_1">(##)</label>
 					</span>
@@ -173,33 +182,48 @@
 				 		<input id="element_9_3" name="element_9_3" class="element text" size="4" maxlength="4" value="" type="text" />
 						<label for="element_9_3">####</label>
 					</span>
+					 -->
 				</li>		
 				
 				<li id="li_10" >
 					<label class="description" for="element_10">ID 1 </label>
 					<div>
-						<input id="element_10" name="element_10" class="element text medium" type="text" maxlength="255" value="" /> 
+						<input id="element_10" name="id" class="element text medium" type="text" maxlength="255" value="" /> 
 					</div> 
 				</li>		
 					
 				<li id="li_11" >
 					<label class="description" for="element_11">ID 2 </label>
 					<div>
-						<input id="element_11" name="element_11" class="element text medium" type="text" maxlength="255" value="" /> 
+						<input id="element_11" name="cpf" class="element text medium" type="text" maxlength="255" value="" /> 
 					</div> 
 				</li>		
 				
 				<li id="li_12" >
 					<label class="description" for="element_12">E-mail </label>
 					<div>
-						<input id="element_12" name="element_12" class="element text medium" type="text" maxlength="255" value="" /> 
+						<input id="element_12" name="email" class="element text medium" type="text" maxlength="255" value="" /> 
 					</div> 
 				</li>		
 				
 				<li id="li_13" >
 					<label class="description" for="element_13">Notes </label>
 					<div>
-						<textarea id="element_13" name="element_13" class="element textarea small"></textarea> 
+						<textarea id="element_13" name="notes" class="element textarea small"></textarea> 
+					</div> 
+				</li>
+
+				<li id="li_13" >
+					<label class="description" for="element_14">Login </label>
+					<div>
+						<input id="element_14" name="login" class="element text medium" type="text" maxlength="255" value="" /> 
+					</div> 
+				</li>
+
+				<li id="li_13" >
+					<label class="description" for="element_15">Password </label>
+					<div>
+						<input id="element_15" name="password" class="element text medium" type="password" maxlength="255" value="" /> 
 					</div> 
 				</li>
 			

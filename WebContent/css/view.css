@@ -24,6 +24,36 @@ body
 	width:650px;
 }
 
+#header
+{
+	width:640px;
+	height:30px;
+	background:#FFF;
+	margin-top:10px;
+	text-align:center;
+}
+
+#header ul li
+{
+	display:inline;
+	margin-right:26px;
+}
+
+#header ul li a
+{
+	color:#6699CC;
+	text-decoration:none;
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+	font-size:18px;
+}
+
+#header ul li a:hover
+{
+	border-bottom:2px solid #336699;
+	padding-bottom:3px;
+	color:#336699;
+}
+
 #footer
 {
 	width:640px;

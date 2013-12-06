@@ -14,6 +14,8 @@
 	
 		<h1><a>Crisis Registration</a></h1>
 		
+		<jsp:include page="menu_inc.jsp" />
+		
 		<form id="form_743394" class="appnitro"  method="post" action="">
 			<div class="form_description">
 				<h2>Crisis Registration</h2>
@@ -25,7 +27,7 @@
 				<li id="li_1" >
 					<label class="description" for="element_1">Date </label>
 					<span>
-				 		<input id="element_1_3" name="element_1_3" class="element text" size="10" maxlength="10" value="" type="text" />
+				 		<input id="element_1_3" name="date" class="element text" size="10" maxlength="10" value="" type="text" />
 						<label for="element_1_3">MM/DD/YYYY</label>
 					</span>
 					<span id="calendar_1">
@@ -46,13 +48,13 @@
 				<li id="li_2" >
 					<label class="description" for="element_2">Intensity </label>
 					<span>
-						<input id="element_2_1" name="element_2" class="element radio" type="radio" value="1" />
+						<input id="element_2_1" name="intensity" class="element radio" type="radio" value="1" />
 						<label class="choice" for="element_2_1">Low</label>
 						
-						<input id="element_2_2" name="element_2" class="element radio" type="radio" value="2" />
+						<input id="element_2_2" name="intensity" class="element radio" type="radio" value="2" />
 						<label class="choice" for="element_2_2">Medium</label>
 						
-						<input id="element_2_3" name="element_2" class="element radio" type="radio" value="3" />
+						<input id="element_2_3" name="intensity" class="element radio" type="radio" value="3" />
 						<label class="choice" for="element_2_3">Strong</label>
 					</span> 
 				</li>		
@@ -60,9 +62,9 @@
 				<li id="li_3" >
 					<label class="description" for="element_3">Nausea </label>
 					<span>
-						<input id="element_3_1" name="element_3" class="element radio" type="radio" value="1" />
+						<input id="element_3_1" name="nausea" class="element radio" type="radio" value="1" />
 						<label class="choice" for="element_3_1">Yes</label>
-						<input id="element_3_2" name="element_3" class="element radio" type="radio" value="2" />
+						<input id="element_3_2" name="nausea" class="element radio" type="radio" value="2" />
 						<label class="choice" for="element_3_2">No</label>
 					</span> 
 				</li>		
@@ -70,7 +72,7 @@
 				<li id="li_4" >
 					<label class="description" for="element_4">Time </label>
 					<div>
-						<select class="element select small" id="element_4" name="element_4"> 
+						<select class="element select small" id="element_4" name="timer"> 
 							<option value="" selected="selected"></option>
 							<option value="1" >Morning</option>
 							<option value="2" >Afternoon</option>

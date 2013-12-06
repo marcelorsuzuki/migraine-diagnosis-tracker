@@ -14,6 +14,9 @@
 	<div id="form_container">
 	
 		<h1><a>Schedule Events</a></h1>
+		
+		<jsp:include page="menu_inc.jsp" />
+		
 		<form id="form_743549" class="appnitro"  method="post" action="">
 		
 			<div class="form_description">
@@ -25,14 +28,14 @@
 				<li id="li_1" >
 					<label class="description" for="element_1">Name </label>
 					<div>
-						<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/> 
+						<input id="element_1" name="name" class="element text medium" type="text" maxlength="255" value=""/> 
 					</div> 
 				</li>		
 					
 				<li id="li_2" >
 					<label class="description" for="element_2">Date </label>
 				    <span>
-				 		<input id="element_2_3" name="element_2_3" class="element text" size="10" maxlength="10" value="" type="text" />
+				 		<input id="element_2_3" name="dateCrisis" class="element text" size="10" maxlength="10" value="" type="text" />
 						<label for="element_2_3">MM/DD/YYYY</label>
 					</span>
 									

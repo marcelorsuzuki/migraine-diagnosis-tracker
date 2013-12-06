@@ -16,7 +16,9 @@
 			<a>Daily Information</a>
 		</h1>
 		
-		<form id="form_743549" class="appnitro" method="post" action="save">
+		<jsp:include page="menu_inc.jsp" />
+		
+		<form id="form_743549" class="appnitro" method="post" action="daily-info-save">
 		
 			<div class="form_description">
 				<h2>Daily Information</h2>
