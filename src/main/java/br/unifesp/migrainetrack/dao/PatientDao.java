@@ -68,7 +68,7 @@ public class PatientDao implements Serializable {
 		return lista;
 	}
 	
-	public boolean authentic(Patient patient) {
+	public Patient authentic(String username, String password) {
 		
 		EntityManager em = new JpaUtil().getEntityManager();
 		
@@ -77,9 +77,14 @@ public class PatientDao implements Serializable {
 		Query query = em.createQuery("select p from Patient as p " +
 			                         "where p.login = :login " +
 				                     "and p.password = :password");
-		query.setParameter("login", patient.getLogin());
-		query.setParameter("password", patient.getPassword());
+		query.setParameter("login", username);
+		query.setParameter("password", password);
 		List<Patient> list = (List<Patient>) query.getResultList();
-		return (list.size() > 0);
+		if (list.size() > 0) {
+			return list.get(0);
+		}
+		else {
+			return null;
+		}
 	}
 }

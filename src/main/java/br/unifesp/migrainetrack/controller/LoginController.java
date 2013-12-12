@@ -4,16 +4,21 @@ import javax.faces.bean.ManagedBean;
 import br.unifesp.migrainetrack.dao.PatientDao;
 import br.unifesp.migrainetrack.model.Patient;
 
-@ManagedBean
+@ManagedBean(name="loginController")
 public class LoginController {
+	
+	private String username;
+	private String password;
 	
 	public String show(Patient patient) {
 		return "login";
 	}
 
-	public String authentic(Patient patient) {
+	public String authentic() {
 		PatientDao dao = new PatientDao();
-		if (dao.authentic(patient)) {
+		Patient patient = dao.authentic(username, password);
+		
+		if (patient != null) {
 			return "dailyinfo";
 		}
 		else {
@@ -21,5 +26,23 @@ public class LoginController {
 		}
 	
 	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
 	
 }
