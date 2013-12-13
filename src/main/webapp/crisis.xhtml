@@ -13,9 +13,10 @@
 	<h:outputScript name="view.js" library="js" />
 	<h:outputScript name="calendar.js" library="js" />
 </h:head>
+
 <body id="main_body" >
 	
-	<img id="top" src="resources/img/top.png" alt="" />
+	<h:graphicImage id="top" library="img" name="top.png"/>
 	<div id="form_container">
 	
 		<h1><a>Crisis Registration</a></h1>
@@ -37,7 +38,7 @@
 						<label for="element_1_3">MM/DD/YYYY</label>
 					</span>
 					<span id="calendar_1">
-						<img id="cal_img_1" class="datepicker" src="resources/img/calendar.gif" alt="Pick a date." />	
+						<h:graphicImage id="cal_img_1" styleClass="datepicker" library="img" name="calendar.gif" alt="Pick a date."/>
 					</span>
 					<script type="text/javascript">
 						Calendar.setup({
@@ -99,7 +100,7 @@
 			<i>&copy;2013 All Rights Reserved.</i>
 		</div>
 	</div>
-	<img id="bottom" src="resources/img/bottom.png" alt="" />
+	<h:graphicImage id="bottom" library="img" name="bottom.png"/>
 	
 </body>
 </html>

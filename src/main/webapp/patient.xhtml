@@ -6,16 +6,17 @@
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:ui="http://java.sun.com/jsf/facelets">
 	  
-<head>
+<h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Patient Registration</title>
-	<link rel="stylesheet" type="text/css" href="css/view.css" media="all" />
-	<script type="text/javascript" src="js/view.js"></script>
-	<script type="text/javascript" src="js/calendar.js"></script>
-</head>
+	<title>Crisis Registration</title>
+	<h:outputStylesheet name="view.css" library="css" />
+	<h:outputScript name="view.js" library="js" />
+
+</h:head>
+
 <body id="main_body" >
 	
-	<img id="top" src="img/top.png" alt="" />
+	<h:graphicImage id="top" library="img" name="top.png"/>
 	<div id="form_container">
 	
 		<h1><a>Patient Registration</a></h1>
@@ -173,22 +174,6 @@
 					<div>
 						<input id="element_9_1" name="phone" class="element text" size="15"  value="" type="text" />
 					</div>
-					<!-- 
-					<span>
-						<input id="element_9_1" name="phone" class="element text" size="2" maxlength="2" value="" type="text" /> 
-						-
-						<label for="element_9_1">(##)</label>
-					</span>
-					<span>
-						<input id="element_9_2" name="element_9_2" class="element text" size="5" maxlength="5" value="" type="text" /> 
-						-
-						<label for="element_9_2">#####</label>
-					</span>
-					<span>
-				 		<input id="element_9_3" name="element_9_3" class="element text" size="4" maxlength="4" value="" type="text" />
-						<label for="element_9_3">####</label>
-					</span>
-					 -->
 				</li>		
 				
 				<li id="li_10" >
@@ -243,6 +228,9 @@
 			<i>&copy;2013 All Rights Reserved.</i>
 		</div>
 	</div>
-	<img id="bottom" src="img/bottom.png" alt="" />
-	</body>
+	
+	<h:graphicImage id="bottom" library="img" name="bottom.png"/>
+	
+</body>
+
 </html>

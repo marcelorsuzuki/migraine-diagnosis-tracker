@@ -1,11 +1,11 @@
-<div id="header">
+<div id="header" xmlns:h="http://java.sun.com/jsf/html">
 	<ul>
-		<li><a href="/migraine-diagnosis-tracker/patient">Home</a></li>
-		<li><a href="/migraine-diagnosis-tracker/patient">Profile</a></li>
-		<li><a href="/migraine-diagnosis-tracker/daily-info">Daily Info</a></li>
-		<li><a href="/migraine-diagnosis-tracker/crisis">Crisis</a></li>
-		<li><a href="/migraine-diagnosis-tracker/events">Event</a></li>
-		<li><a href="http://localhost/Reports">Reports</a></li>
-		<li><a href="/migraine-diagnosis-tracker/login">Logout</a></li>
+		<li><h:link value="Home" outcome="dailyinfo" /></li>
+		<li><h:link value="Disease" outcome="disease" /></li>
+		<li><h:link value="Daily Info" outcome="dailyinfo" /></li>
+		<li><h:link value="Crisis" outcome="crisis" /></li>
+		<li><h:link value="Event" outcome="events" /></li>
+		<li><h:link value="Reports" outcome="events" /></li>
+		<li><h:link value="Logout" outcome="login" /></li>
 	</ul>
 </div>

@@ -25,7 +25,7 @@
 				<h2>Login</h2>
 				<p></p>
 			</div>
-									
+				
 			<ul>
 				<li id="li_1" >
 					<h:outputLabel styleClass="description" for="element_1">Username </h:outputLabel>
@@ -38,14 +38,20 @@
 					<h:outputLabel styleClass="description" for="element_2">Password </h:outputLabel>
 					<div>
 						<h:inputSecret id="element_2" styleClass="element text medium" maxlength="255" value="#{loginController.password}"/>
-					</div> 
+					</div>
+					
+					If you don't have an Account, please <h:commandLink value="Sign up" action="patient" />. 
 				</li>
+				
+				
 				
 				<li class="buttons">
 					<h:commandButton id="saveForm" styleClass="button_text" value="Submit" action="#{loginController.authentic}"/>
 				</li>
 			</ul>
-		</h:form>	
+			
+		</h:form>
+		
 		<div id="footer">
 			<i>&copy;2013 All Rights Reserved.</i>
 		</div>

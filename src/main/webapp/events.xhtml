@@ -6,17 +6,17 @@
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:ui="http://java.sun.com/jsf/facelets">
       
-<head>
+<h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Schedule Events</title>
-	<link rel="stylesheet" type="text/css" href="css/view.css" media="all" />
-	<script type="text/javascript" src="js/view.js"></script>
-	<script type="text/javascript" src="js/calendar.js"></script>
-</head>
+	<title>Crisis Registration</title>
+	<h:outputStylesheet name="view.css" library="css" />
+	<h:outputScript name="view.js" library="js" />
+
+</h:head>
 
 <body id="main_body" >
 	
-	<img id="top" src="img/top.png" alt="" />
+	<h:graphicImage id="top" library="img" name="top.png"/>
 	<div id="form_container">
 	
 		<h1><a>Schedule Events</a></h1>
@@ -46,7 +46,7 @@
 					</span>
 									
 					<span id="calendar_2">
-						<img id="cal_img_2" class="datepicker" src="img/calendar.gif" alt="Pick a date." />	
+						<h:graphicImage id="cal_img_2" styleClass="datepicker" library="img" name="calendar.gif" alt="Pick a date."/>
 					</span>
 					<script type="text/javascript">
 						Calendar.setup({
@@ -80,6 +80,8 @@
 			<i>&copy;2013 All Rights Reserved.</i>
 		</div>
 	</div>
-	<img id="bottom" src="img/bottom.png" alt="" />
+	
+	<h:graphicImage id="bottom" library="img" name="bottom.png"/>
+	
 </body>
 </html>
