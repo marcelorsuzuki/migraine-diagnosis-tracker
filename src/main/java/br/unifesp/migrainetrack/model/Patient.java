@@ -43,8 +43,6 @@ public class Patient {
 	@Column(name="zip_code")
 	private String zipCode;
 	
-	private String area;
-	
 	@ManyToOne
 	@JoinColumn(name="cod_cit")
 	private City city;
@@ -59,7 +57,8 @@ public class Patient {
 	
 	private String email;
 	
-	private String login;
+	@Column(name="login")
+	private String username;
 	
 	@Column(name="pwd")
 	private String password;
@@ -161,14 +160,6 @@ public class Patient {
 		this.zipCode = zipCode;
 	}
 
-	public String getArea() {
-		return area;
-	}
-
-	public void setArea(String area) {
-		this.area = area;
-	}
-
 	public City getCity() {
 		return city;
 	}
@@ -209,12 +200,37 @@ public class Patient {
 		this.email = email;
 	}
 
-	public String getLogin() {
-		return login;
+
+	public String getUsername() {
+		return username;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public List<Crisis> getCrisiList() {
+		return crisiList;
+	}
+
+	public void setCrisiList(List<Crisis> crisiList) {
+		this.crisiList = crisiList;
+	}
+
+	public List<Disease> getDiseaseList() {
+		return diseaseList;
+	}
+
+	public void setDiseaseList(List<Disease> diseaseList) {
+		this.diseaseList = diseaseList;
+	}
+
+	public List<History> getHistoryList() {
+		return historyList;
+	}
+
+	public void setHistoryList(List<History> historyList) {
+		this.historyList = historyList;
 	}
 
 	public String getPassword() {

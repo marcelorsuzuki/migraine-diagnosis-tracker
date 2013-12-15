@@ -1,10 +1,10 @@
 package br.unifesp.migrainetrack.controller;
 import javax.faces.bean.ManagedBean;
 
-import br.unifesp.migrainetrack.dao.Dao;
-import br.unifesp.migrainetrack.dao.JpaUtil;
+import br.unifesp.migrainetrack.dao.PatientDao;
 import br.unifesp.migrainetrack.model.Crisis;
 import br.unifesp.migrainetrack.model.Patient;
+import br.unifesp.migrainetrack.util.JpaUtil;
 
 @ManagedBean
 public class PatientController {
@@ -15,8 +15,8 @@ public class PatientController {
 	
 	
 	public String save(Patient patient) {
-		Dao<Patient> dao = new Dao<Patient>(Patient.class, new JpaUtil().getEntityManager());
-		dao.adiciona(patient);
+		PatientDao dao = new PatientDao(new JpaUtil().getEntityManager());
+		dao.insert(patient);
 		return "patient";
 	}
 

@@ -19,32 +19,26 @@ public class Dao<T> implements Serializable {
 		this.classe = classe;
 	}
 
-	public void adiciona(T t) {
-		//consegue a entity manager
-		EntityManager em = new JpaUtil().getEntityManager();
+	public void insert(T t) {
 		
-		//abre transacao
 		em.getTransaction().begin();
-
-		//persiste o objeto
 		em.persist(t);
-
-		//commita a transacao
 		em.getTransaction().commit();
-
-		//fecha a entity manager
-		em.close();
 	}
 
 	public void remove(T t) {
+		em.getTransaction().begin();
 		em.remove(em.merge(t));
+		em.getTransaction().commit();
 	}
 
-	public void atualiza(T t) {
+	public void update(T t) {
+		em.getTransaction().begin();
 		em.merge(t);
+		em.getTransaction().commit();
 	}
 
-	public List<T> listaTodos() {
+	public List<T> listAll() {
 		CriteriaQuery<T> query = em.getCriteriaBuilder().createQuery(classe);
 		query.select(query.from(classe));
 
@@ -52,17 +46,17 @@ public class Dao<T> implements Serializable {
 		return lista;
 	}
 	
-	public T buscaPorId(Long id) {
+	public T loadById(Long id) {
 		T instancia = em.find(classe, id);
 		return instancia;
 	}
 	
-	public int contaTodos() {
+	public int countAll() {
 		long result = (Long) em.createQuery("select count(n) from " + classe.getName() + " n").getSingleResult();
 		return (int) result;
 	}
 
-	public List<T> listaTodosPaginada(int firstResult, int maxResults) {
+	public List<T> listAllByPage(int firstResult, int maxResults) {
 		CriteriaQuery<T> query = em.getCriteriaBuilder().createQuery(classe);
 		query.select(query.from(classe));
 

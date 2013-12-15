@@ -1,14 +1,12 @@
-body
-{
-	background:#336699;
-	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
-	font-size:small;
-	margin:8px 0 16px;
-	text-align:center;
+body {
+	background: #336699;
+	font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+	font-size: small;
+	margin: 80px 0 16px;
+	text-align: center;
 }
 
-#form_container
-{
+#form_container {
 	background:#fff;
 	
 	margin:0 auto;
@@ -36,7 +34,7 @@ body
 #header ul li
 {
 	display:inline;
-	margin-right:26px;
+	margin-right:22px;
 }
 
 #header ul li a

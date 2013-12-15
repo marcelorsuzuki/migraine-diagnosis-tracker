@@ -1,4 +1,4 @@
-package br.unifesp.migrainetrack.dao;
+package br.unifesp.migrainetrack.util;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

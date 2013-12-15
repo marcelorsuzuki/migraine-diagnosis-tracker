@@ -25,21 +25,21 @@ public class History implements Serializable {
 	@Column(name="id_his")
 	private int id;
 
+	@Column(name="dt_his")
+	@Temporal(TemporalType.DATE)
+	private Calendar dateHistory;
+
 	private String breakfast;
 
-	@Column(name="daily_act")
-	private String dailyActivities;
-
+	private String lunch;
+	
 	private String dinner;
 
-	@Column(name="dt_cri")
-	@Temporal(TemporalType.DATE)
-	private Calendar dateCrisis;
-
-	private String lunch;
-
 	private String others;
-
+	
+	@Column(name="daily_act")
+	private String dailyActivities;
+	
 	//bi-directional many-to-one association to Patient
 	@ManyToOne
 	@JoinColumn(name="cod_pat")
@@ -80,12 +80,12 @@ public class History implements Serializable {
 		this.dinner = dinner;
 	}
 
-	public Calendar getDateCrisis() {
-		return dateCrisis;
+	public Calendar getDateHistory() {
+		return dateHistory;
 	}
 
-	public void setDateCrisis(Calendar dateCrisis) {
-		this.dateCrisis = dateCrisis;
+	public void setDateHistory(Calendar dateHistory) {
+		this.dateHistory = dateHistory;
 	}
 
 	public String getLunch() {
