@@ -34,11 +34,12 @@ public class Authorizer implements PhaseListener {
 		FacesContext context = event.getFacesContext();
 		
 		//If the view is Login, it's not necessary to check if the user is logged.
-		if ("/login.xhtml".equals(context.getViewRoot().getViewId())) {
+		if ("/login.xhtml".equals(context.getViewRoot().getViewId()) ||
+			"/patient.xhtml".equals(context.getViewRoot().getViewId())) {
 			return;
 		}
 		 
-		LoginController controller = context.getApplication().evaluateExpressionGet(context, "#{loginController}", LoginController.class);
+		LoginController controller = context.getApplication().evaluateExpressionGet(context, "#{loginC}", LoginController.class);
 		
 		if (!controller.isLogged()) {
 			NavigationHandler handler = context.getApplication().getNavigationHandler();

@@ -6,7 +6,7 @@ import br.unifesp.migrainetrack.model.History;
 import br.unifesp.migrainetrack.model.Patient;
 import br.unifesp.migrainetrack.util.JpaUtil;
 
-@ManagedBean
+@ManagedBean(name="dailyInfoC")
 public class DailyInfoController {
 	
 

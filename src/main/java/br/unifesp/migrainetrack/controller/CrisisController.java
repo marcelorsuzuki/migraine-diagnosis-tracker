@@ -6,7 +6,7 @@ import br.unifesp.migrainetrack.model.Crisis;
 import br.unifesp.migrainetrack.model.Patient;
 import br.unifesp.migrainetrack.util.JpaUtil;
 
-@ManagedBean
+@ManagedBean(name="crisisC")
 public class CrisisController {
 	
 	

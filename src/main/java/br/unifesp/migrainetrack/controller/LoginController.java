@@ -13,7 +13,7 @@ import br.unifesp.migrainetrack.util.JpaUtil;
  * @author Marcelo Suzuki
  *
  */
-@ManagedBean(name="loginController")
+@ManagedBean(name="loginC")
 @SessionScoped
 public class LoginController {
 	

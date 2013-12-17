@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="Marital_Status")
 public class MaritalStatus implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id

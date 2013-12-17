@@ -29,23 +29,23 @@
 				<li id="li_1" >
 					<h:outputLabel styleClass="description" for="element_1">Username </h:outputLabel>
 					<div>
-						<h:inputText id="element_1" styleClass="element text medium" maxlength="255" value="#{loginController.username}" />
+						<h:inputText id="element_1" styleClass="element text medium" maxlength="255" value="#{loginC.username}" />
 					</div> 
 				</li>		
 				
 				<li id="li_2" >
 					<h:outputLabel styleClass="description" for="element_2">Password </h:outputLabel>
 					<div>
-						<h:inputSecret id="element_2" styleClass="element text medium" maxlength="255" value="#{loginController.password}"/>
+						<h:inputSecret id="element_2" styleClass="element text medium" maxlength="255" value="#{loginC.password}"/>
 					</div>
 					
-					If you don't have an Account, please <h:commandLink value="Sign up" action="patient" />. 
+					If you don't have an Account, please <h:commandLink value="Sign up" action="patient?faces-redirect=true" />. 
 				</li>
 				
 				
 				
 				<li class="buttons">
-					<h:commandButton id="saveForm" styleClass="button_text" value="Submit" action="#{loginController.authentic}"/>
+					<h:commandButton id="saveForm" styleClass="button_text" value="Submit" action="#{loginC.authentic}"/>
 				</li>
 			</ul>
 			

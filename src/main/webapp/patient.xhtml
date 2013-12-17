@@ -14,7 +14,7 @@
 
 </h:head>
 
-<body id="main_body" >
+<h:body id="main_body" >
 	
 	<h:graphicImage id="top" library="img" name="top.png"/>
 	<div id="form_container">
@@ -23,7 +23,7 @@
 		
 		<ui:include src="menu_inc.xhtml" />
 		
-		<form id="form_743687" class="appnitro"  method="post" action="patient-save">
+		<h:form id="form_743687" class="appnitro" prependId="false">
 		
 			<div class="form_description">
 				<h2>Patient Registration</h2>
@@ -32,23 +32,23 @@
 									
 			<ul >
 				<li id="li_1" >
-					<label class="description" for="element_1">Name </label>
+				
+					<h:outputLabel styleClass="description" for="element_1">Name </h:outputLabel>
 					<div>
-						<input id="element_1" name="name" class="element text medium" type="text" maxlength="255" value=""/> 
+						<h:inputText id="element_1" styleClass="element text medium" maxlength="255" value="#{patientC.name}" />
 					</div> 
 				</li>		
 				
 				<li id="li_2" >
 				
-					<label class="description" for="element_2">Birthdate </label>
-					
+					<h:outputLabel styleClass="description" for="element_2">Birthday </h:outputLabel>
 					<span>
-				 		<input id="element_2_3" name="birthday" class="element text" size="10" maxlength="10" value="" type="text" />
-						<label for="element_2_3">MM/DD/YYYY</label>
+				 		<h:inputText id="element_2_3" name="birthday" styleClass="element text" size="10" maxlength="10" value="#{patientC.birthday}" />
+						<h:outputLabel for="element_2_3">MM/DD/YYYY</h:outputLabel>
 					</span>
 						
 					<span id="calendar_2">
-						<img id="cal_img_2" class="datepicker" src="img/calendar.gif" alt="Pick a date." />	
+						<h:graphicImage id="cal_img_2" styleClass="datepicker" library="img" name="calendar.gif" alt="Pick a date." />	
 					</span>
 					
 					<script type="text/javascript">
@@ -65,67 +65,63 @@
 				</li>		
 				
 				<li id="li_14" >
-					<label class="description" for="element_14">Gender </label>
-					<span>
-						<input id="element_14_1" name="gender" class="element radio" type="radio" value="m" />
-						<label class="choice" for="element_14_1">Male</label>
-						<input id="element_14_2" name="gender" class="element radio" type="radio" value="f" />
-						<label class="choice" for="element_14_2">Female</label>
-					</span> 
-				</li>		
+					<h:outputLabel styleClass="description" for="element_14">Gender </h:outputLabel>
+					<h:panelGroup>
+						<h:selectOneRadio id="subscriptions" value="#{patientC.gender}" styleClass="element radio">
+						    <f:selectItem id="element_14_1" itemLabel="Male" itemValue="m" />
+						    <f:selectItem id="element_14_2" itemLabel="Female" itemValue="f" />
+						</h:selectOneRadio>		
+					</h:panelGroup> 
+				</li>		 
 				
-				<li id="li_15" >
-					<label class="description" for="element_15">Marital Status </label>
-					<div>
-						<select class="element select small" id="element_15" name="maritalStatus"> 
-							<option value="" selected="selected"></option>
-							<option value="1" >Single</option>
-							<option value="2" >Married</option>
-							<option value="3" >Divorced</option>
-							<option value="4" >Widowed</option>
-							<option value="5" >Separated</option>
-						</select>
-					</div> 
+				<li id="li_16" >
+					<h:outputLabel styleClass="description" for="element_16">Marital Status </h:outputLabel>
+					<h:panelGroup layout="block">
+						<h:selectOneMenu class="element select small" id="element_16" value="#{patientC.maritalStatus}">
+							<f:selectItem itemLabel="(Select one item)"/>
+							<f:selectItems value="#{patientC.maritalList}" var="m" itemLabel="#{m.description}" itemValue="#{m}"/>
+						</h:selectOneMenu>					
+					</h:panelGroup> 
 				</li>		
 				
 				<li id="li_3" >
-					<label class="description" for="element_3">Occupation </label>
+					<h:outputLabel styleClass="description" for="element_3">Occupation </h:outputLabel>
 					<div>
-						<input id="element_3" name="job" class="element text medium" type="text" maxlength="255" value=""/> 
+						<h:inputText id="element_3" name="job" styleClass="element text medium" maxlength="255" value="#{patientC.job}"/> 
 					</div> 
 				</li>		
 				
 				<li id="li_4" >
-					<label class="description" for="element_4">Address 1 </label>
+					<h:outputLabel styleClass="description" for="element_4">Address 1 </h:outputLabel>
 					<div>
-						<input id="element_4" name="address1" class="element text large" type="text" maxlength="255" value=""/> 
+						<h:inputText id="element_4" name="address1" styleClass="element text large" maxlength="255" value="#{patientC.address1}"/> 
 					</div> 
 				</li>		
 				
 				<li id="li_5" >
-					<label class="description" for="element_5">Address 2 </label>
+					<h:outputLabel styleClass="description" for="element_5">Address 2 </h:outputLabel>
 					<div>
-						<input id="element_5" name="address2" class="element text large" type="text" maxlength="255" value=""/> 
+						<h:inputText id="element_5" name="address2" styleClass="element text large" maxlength="255" value="#{patientC.address2}"/> 
 					</div> 
 				</li>		
 				
 				<li id="li_6" >
-					<label class="description" for="element_6">Address 3 </label>
+					<h:outputLabel styleClass="description" for="element_6">Address 3 </h:outputLabel>
 					<div>
-						<input id="element_6" name="address3" class="element text large" type="text" maxlength="255" value=""/> 
+						<h:inputText id="element_6" name="address3" styleClass="element text large" maxlength="255" value="#{patientC.address3}"/> 
 					</div> 
 				</li>		
 				
 				<li id="li_7" >
-					<label class="description" for="element_7">Zip Code </label>
+					<h:outputLabel styleClass="description" for="element_7">Zip Code </h:outputLabel>
 					<div>
-						<input id="element_7" name="zipCode" class="element text medium" type="text" maxlength="255" value=""/> 
+						<h:inputText id="element_7" name="zipCode" styleClass="element text medium" maxlength="255" value="#{patientC.zipCode}"/> 
 					</div> 
 				</li>		
 				
 				<!-- 
 				<li id="li_16" >
-					<label class="description" for="element_16">State </label>
+					<h:outputLabel styleClass="description" for="element_16">State </h:outputLabel>
 					<div>
 						<select class="element select medium" id="element_16" name="element_16"> 
 							<option value="" selected="selected"></option>
@@ -162,7 +158,7 @@
 				 	
 				
 				<li id="li_8" >
-					<label class="description" for="element_8">City </label>
+					<h:outputLabel styleClass class="description" for="element_8">City </h:outputLabel>
 					<div>
 						<input id="element_8" name="element_8" class="element text medium" type="text" maxlength="255" value=""/> 
 					</div> 
@@ -170,51 +166,51 @@
 				-->		
 				
 				<li id="li_9" >
-					<label class="description" for="element_9">Phone </label>
+					<h:outputLabel styleClass="description" for="element_9">Phone </h:outputLabel>
 					<div>
-						<input id="element_9_1" name="phone" class="element text" size="15"  value="" type="text" />
+						<h:inputText id="element_9_1" name="phone" styleClass="element text" size="15"  value="#{patientC.phone}" />
 					</div>
 				</li>		
 				
 				<li id="li_10" >
-					<label class="description" for="element_10">ID 1 </label>
+					<h:outputLabel styleClass="description" for="element_10">ID 1 </h:outputLabel>
 					<div>
-						<input id="element_10" name="id" class="element text medium" type="text" maxlength="255" value="" /> 
+						<h:inputText id="element_10" name="id" styleClass="element text medium" maxlength="255" value="#{patientC.identification}" /> 
 					</div> 
 				</li>		
 					
 				<li id="li_11" >
-					<label class="description" for="element_11">ID 2 </label>
+					<h:outputLabel styleClass="description" for="element_11">ID 2 </h:outputLabel>
 					<div>
-						<input id="element_11" name="cpf" class="element text medium" type="text" maxlength="255" value="" /> 
+						<h:inputText id="element_11" name="cpf" styleClass="element text medium" maxlength="255" value="#{patientC.cpf}" /> 
 					</div> 
 				</li>		
 				
 				<li id="li_12" >
-					<label class="description" for="element_12">E-mail </label>
+					<h:outputLabel styleClass="description" for="element_12">E-mail </h:outputLabel>
 					<div>
-						<input id="element_12" name="email" class="element text medium" type="text" maxlength="255" value="" /> 
+						<h:inputText id="element_12" name="email" styleClass="element text medium" maxlength="255" value="#{patientC.email}" /> 
 					</div> 
 				</li>		
 				
 				<li id="li_13" >
-					<label class="description" for="element_13">Notes </label>
+					<h:outputLabel styleClass="description" for="element_13">Notes </h:outputLabel>
 					<div>
-						<textarea id="element_13" name="notes" class="element textarea small"></textarea> 
+						<h:inputTextarea id="element_13" name="notes" styleClass="element textarea small" value="#{patientC.notes}" /> 
 					</div> 
 				</li>
 
 				<li id="li_13" >
-					<label class="description" for="element_14">Login </label>
+					<h:outputLabel styleClass="description" for="element_14">Username </h:outputLabel>
 					<div>
-						<input id="element_14" name="login" class="element text medium" type="text" maxlength="255" value="" /> 
+						<h:inputText id="element_14" name="login" styleClass="element text medium" maxlength="255" value="#{patientC.username}" /> 
 					</div> 
 				</li>
 
 				<li id="li_13" >
-					<label class="description" for="element_15">Password </label>
+					<h:outputLabel styleClass="description" for="element_15">Password </h:outputLabel>
 					<div>
-						<input id="element_15" name="password" class="element text medium" type="password" maxlength="255" value="" /> 
+						<h:inputSecret id="element_15" name="password" styleClass="element text medium" maxlength="255" value="#{patientC.username}" /> 
 					</div> 
 				</li>
 			
@@ -223,7 +219,7 @@
 					<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
 				</li>
 			</ul>
-		</form>	
+		</h:form>	
 		<div id="footer">
 			<i>&copy;2013 All Rights Reserved.</i>
 		</div>
@@ -231,6 +227,6 @@
 	
 	<h:graphicImage id="bottom" library="img" name="bottom.png"/>
 	
-</body>
+</h:body>
 
 </html>
