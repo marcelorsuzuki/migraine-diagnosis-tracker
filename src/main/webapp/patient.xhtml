@@ -11,7 +11,7 @@
 	<title>Patient Registration</title>
 	<h:outputStylesheet name="view.css" library="css" />
 	<h:outputScript name="view.js" library="js" />
-
+    <h:outputScript name="calendar.js" library="js" />
 </h:head>
 
 <h:body id="main_body" >
@@ -23,7 +23,7 @@
 		
 		<ui:include src="menu_inc.xhtml" />
 		
-		<h:form id="form_743687" class="appnitro" prependId="false">
+		<h:form id="form_743687" styleClass="appnitro" prependId="false">
 		
 			<div class="form_description">
 				<h2>Patient Registration</h2>
@@ -43,8 +43,10 @@
 				
 					<h:outputLabel styleClass="description" for="element_2">Birthday </h:outputLabel>
 					<span>
-				 		<h:inputText id="element_2_3" name="birthday" styleClass="element text" size="10" maxlength="10" value="#{patientC.birthday}" />
-						<h:outputLabel for="element_2_3">MM/DD/YYYY</h:outputLabel>
+				 		<h:inputText id="element_2_3" name="birthday" styleClass="element text" size="10" maxlength="10" value="#{patientC.birthday}">
+				 			<f:convertDateTime pattern="dd/MM/yyyy"/>
+				 		</h:inputText>
+						<h:outputLabel for="element_2_3">DD/MM/YYYY</h:outputLabel>
 					</span>
 						
 					<span id="calendar_2">
@@ -77,9 +79,9 @@
 				<li id="li_16" >
 					<h:outputLabel styleClass="description" for="element_16">Marital Status </h:outputLabel>
 					<h:panelGroup layout="block">
-						<h:selectOneMenu class="element select small" id="element_16" value="#{patientC.maritalStatus}">
+						<h:selectOneMenu class="element select small" id="element_16" value="#{patientC.maritalId}">
 							<f:selectItem itemLabel="(Select one item)"/>
-							<f:selectItems value="#{patientC.maritalList}" var="m" itemLabel="#{m.description}" itemValue="#{m}"/>
+							<f:selectItems value="#{patientC.maritalList}" var="m" itemLabel="#{m.description}" itemValue="#{m.id}"/>
 						</h:selectOneMenu>					
 					</h:panelGroup> 
 				</li>		
@@ -210,13 +212,12 @@
 				<li id="li_13" >
 					<h:outputLabel styleClass="description" for="element_15">Password </h:outputLabel>
 					<div>
-						<h:inputSecret id="element_15" name="password" styleClass="element text medium" maxlength="255" value="#{patientC.username}" /> 
+						<h:inputSecret id="element_15" name="password" styleClass="element text medium" maxlength="255" value="#{patientC.password}" /> 
 					</div> 
 				</li>
 			
 				<li class="buttons">
-			    	<input type="hidden" name="form_id" value="743687" />
-					<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+					<h:commandButton styleClass="button_text" value="Submit" action="#{patientC.save()}" />
 				</li>
 			</ul>
 		</h:form>	

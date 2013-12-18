@@ -14,7 +14,7 @@
 	<h:outputScript name="calendar.js" library="js" />
 </h:head>
 
-<body id="main_body">
+<h:body id="main_body">
 
 	<h:graphicImage id="top" library="img" name="top.png"/>
 	<div id="form_container">
@@ -25,76 +25,51 @@
 		
 		<ui:include src="menu_inc.xhtml" />
 		
-		<form id="form_743549" class="appnitro" method="post" action="daily-info-save">
+		<h:form id="form_743549" class="appnitro" prependId="false">
 		
 			<div class="form_description">
 				<h2>Daily Information</h2>
 				<p></p>
 			</div>
 			
-			<ul>
-				<li id="li_1">
-					<label class="description" for="element_1">Date</label> 
-					<span>
-				 		<input id="element_1_3" name="dateCrisis" class="element text" size="10" maxlength="10" value="" type="text" />
-						<label for="element_1_3">MM/DD/YYYY</label>
-					</span>
-					<span id="calendar_1"> 
-						<h:graphicImage id="cal_img_1" styleClass="datepicker" library="img" name="calendar.gif" alt="Pick a date."/>
-					</span> 
-					<script type="text/javascript">
-						Calendar.setup({
-							inputField : "element_1_3",
-							baseField : "element_1",
-							displayArea : "calendar_1",
-							button : "cal_img_1",
-							ifFormat : "%B %e, %Y",
-							onSelect : selectDate
-						});
-					</script>
-				</li>
-				
-				<li id="li_2">
-					<label class="description" for="element_2">Breakfast</label>
-					<div>
-						<textarea id="element_2" name="breakfast" class="element textarea small"></textarea>
-					</div>
-				</li>
-				
-				<li id="li_3">
-					<label class="description" for="element_3">Lunch</label>
-					<div>
-						<textarea id="element_3" name="lunch" class="element textarea small"></textarea>
-					</div>
-				</li>
-				
-				<li id="li_4">
-					<label class="description" for="element_4">Dinner</label>
-					<div>
-						<textarea id="element_4" name="dinner" class="element textarea small"></textarea>
-					</div>
-				</li>
-				
-				<li id="li_5">
-					<label class="description" for="element_5">Other Foods </label>
-					<div>
-						<textarea id="element_5" name="others" class="element textarea small"></textarea>
-					</div>
-				</li>
-				
-				<li id="li_6">
-					<label class="description" for="element_6">Activities</label>
-					<div>
-						<textarea id="element_6" name="dailyActivities" class="element textarea small"></textarea>
-					</div>
-				</li>
+			<h:dataTable id="history" columnClasses="list-column-center, list-column-right, list-column-center, list-column-right" 
+			             headerClass="list-header" rowClasses="list-row" styleClass="list-background" 
+			             value="#{dailyInfoC.dailyInfoList}" var="dailyInfo">   
+	  			
+	  			<h:column>
+	    			<f:facet name="header">Date History</f:facet>
+	     			<h:outputText value="#{dailyInfo.dateHistory.time}">
+	     				<f:convertDateTime pattern="dd/MM/yy" />
+	     			</h:outputText>
+	  			</h:column>
+	  			
+	  			<h:column>
+	    			<f:facet name="header">Breakfast</f:facet>
+	     			<h:outputText value="#{dailyInfo.breakfast}"/>
+	  			</h:column>
 
-				<li class="buttons">
-					<input type="hidden" name="form_id" value="743549" /> 
-					<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
-				</li>
-			</ul>
-		</form>
+	  			<h:column>
+	    			<f:facet name="header">Lunch</f:facet>
+	     			<h:outputText value="#{dailyInfo.lunch}"/>
+	  			</h:column>
+
+	  			<h:column>
+	    			<f:facet name="header">Dinner</f:facet>
+	     			<h:outputText value="#{dailyInfo.dinner}"/>
+	  			</h:column>
+
+	  			<h:column>
+	    			<f:facet name="header">Others</f:facet>
+	     			<h:outputText value="#{dailyInfo.others}"/>
+	  			</h:column>
+
+	  			<h:column>
+	    			<f:facet name="header">Daily Activities</f:facet>
+	     			<h:outputText value="#{dailyInfo.dailyActivities}"/>
+	  			</h:column>
+
+			</h:dataTable> 
+		</h:form>
 		<div id="footer">
 			<i>&copy;2013 All Rights Reserved.</i>
 		</div>
@@ -102,5 +77,5 @@
 	
 	<h:graphicImage id="bottom" library="img" name="bottom.png"/>
 	
-</body>
+</h:body>
 </html>

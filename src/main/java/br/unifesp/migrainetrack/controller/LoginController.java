@@ -26,7 +26,7 @@ public class LoginController {
 	 * Constructor 
 	 */
 	public LoginController() {
-		this .currentUser = null;
+		this.currentUser = null;
 	}
 	
 	
@@ -43,10 +43,10 @@ public class LoginController {
 		
 		
 		if (currentUser != null) {
-			return "dailyinfo";
+			return "dailyinfo_edit?faces-redirect=true";
 		}
 		else {
-			return "login";
+			return "login?faces-redirect=true";
 		}
 	}
 	

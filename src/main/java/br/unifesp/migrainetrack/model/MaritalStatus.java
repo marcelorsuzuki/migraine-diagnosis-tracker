@@ -16,7 +16,7 @@ public class MaritalStatus implements Serializable {
 
 	@Id
 	@Column(name="id_ms")
-	private short id;
+	private long id;
 
 	@Column(name="desc_ms")
 	private String description;
@@ -24,11 +24,11 @@ public class MaritalStatus implements Serializable {
 	public MaritalStatus() {
 	}
 
-	public short getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(short id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

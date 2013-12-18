@@ -1,11 +1,10 @@
-<div id="header" xmlns:h="http://java.sun.com/jsf/html">
+<h:panelGroup layout="block" id="header" xmlns:h="http://java.sun.com/jsf/html" rendered="#{loginC.logged}">
 	<ul>
-		<li><h:link value="Home" outcome="dailyinfo?faces-redirect=true" /></li>
-		<li><h:link value="Disease" outcome="disease?faces-redirect=true" /></li>
-		<li><h:link value="Daily Info" outcome="dailyinfo?faces-redirect=true" /></li>
-		<li><h:link value="Crisis" outcome="crisis?faces-redirect=true" /></li>
-		<li><h:link value="Event" outcome="events?faces-redirect=true" /></li>
-		<li><h:link value="Reports" outcome="events?faces-redirect=true" /></li>
-		<li><h:link value="Logout" outcome="login?faces-redirect=true" /></li>
+		<li><h:outputLink value="dailyinfo_edit.xhtml">Home</h:outputLink></li>
+		<li><h:outputLink value="disease.xhtml">Disease</h:outputLink></li>
+		<li><h:outputLink value="dailyinfo.xhtml">Daily Info</h:outputLink></li>
+		<li><h:outputLink value="crisis.xhtml">Crisis</h:outputLink></li>
+		<li><h:outputLink value="http://localhost/Reports">Reports</h:outputLink></li>
+		<li><h:outputLink value="login.xhtml">Logout</h:outputLink></li>
 	</ul>
-</div>
+</h:panelGroup>

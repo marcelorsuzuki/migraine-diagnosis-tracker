@@ -14,7 +14,7 @@
 	<h:outputScript name="calendar.js" library="js" />
 </h:head>
 
-<body id="main_body" >
+<h:body id="main_body" >
 	
 	<h:graphicImage id="top" library="img" name="top.png"/>
 	<div id="form_container">
@@ -23,77 +23,38 @@
 		
 		<ui:include src="menu_inc.xhtml" />
 		
-		<form id="form_743394" class="appnitro"  method="post" action="">
+		<h:form id="form_743394" class="appnitro" prependId="false">
 			<div class="form_description">
 				<h2>Crisis Registration</h2>
 			</div>						
 		
-			<ul>
-				
-				<li id="li_1" >
-					<label class="description" for="element_1">Date </label>
-					<span>
-				 		<input id="element_1_3" name="date" class="element text" size="10" maxlength="10" value="" type="text" />
-						<label for="element_1_3">MM/DD/YYYY</label>
-					</span>
-					<span id="calendar_1">
-						<h:graphicImage id="cal_img_1" styleClass="datepicker" library="img" name="calendar.gif" alt="Pick a date."/>
-					</span>
-					<script type="text/javascript">
-						Calendar.setup({
-							inputField	 : "element_1_3",
-							baseField    : "element_1",
-							displayArea  : "calendar_1",
-							button		 : "cal_img_1",
-							ifFormat	 : "%B %e, %Y",
-							onSelect	 : selectDate
-						});
-					</script>
-				</li>		
-				
-				<li id="li_2" >
-					<label class="description" for="element_2">Intensity </label>
-					<span>
-						<input id="element_2_1" name="intensity" class="element radio" type="radio" value="1" />
-						<label class="choice" for="element_2_1">Low</label>
-						
-						<input id="element_2_2" name="intensity" class="element radio" type="radio" value="2" />
-						<label class="choice" for="element_2_2">Medium</label>
-						
-						<input id="element_2_3" name="intensity" class="element radio" type="radio" value="3" />
-						<label class="choice" for="element_2_3">Strong</label>
-					</span> 
-				</li>		
-				
-				<li id="li_3" >
-					<label class="description" for="element_3">Nausea </label>
-					<span>
-						<input id="element_3_1" name="nausea" class="element radio" type="radio" value="1" />
-						<label class="choice" for="element_3_1">Yes</label>
-						<input id="element_3_2" name="nausea" class="element radio" type="radio" value="2" />
-						<label class="choice" for="element_3_2">No</label>
-					</span> 
-				</li>		
-				
-				<li id="li_4" >
-					<label class="description" for="element_4">Time </label>
-					<div>
-						<select class="element select small" id="element_4" name="timer"> 
-							<option value="" selected="selected"></option>
-							<option value="1" >Morning</option>
-							<option value="2" >Afternoon</option>
-							<option value="3" >Evening</option>
-						</select>
-					</div> 
-				</li>
-					
-				<li class="buttons">
-					<input type="hidden" name="form_id" value="743394" />
-					    
-					<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
-				</li>
-			</ul>
-		</form>
+			<h:dataTable id="crisis" value="#{crisisC.crisisList}" var="crisis" width="400">   
+	  			
+	  			<h:column>
+	    			<f:facet name="header">Date</f:facet>
+	     			<h:outputText value="#{crisis.date.time}">
+	     				<f:convertDateTime pattern="dd/MM/yyyy" />
+	     			</h:outputText>
+	  			</h:column>
+	  			
+	  			<h:column>
+	    			<f:facet name="header">Timer</f:facet>
+	     			<h:outputText value="#{crisis.timer}"/>
+	  			</h:column>
+
+	  			<h:column>
+	    			<f:facet name="header">Intensity</f:facet>
+	     			<h:outputText value="#{crisis.intensity}"/>
+	  			</h:column>
+
+	  			<h:column>
+	    			<f:facet name="header">Nausea</f:facet>
+	     			<h:outputText value="#{crisis.nauseaYesNo}"/>
+	  			</h:column>
+
+			</h:dataTable> 
+
+		</h:form>
 			
 		<div id="footer">
 			<i>&copy;2013 All Rights Reserved.</i>
@@ -101,5 +62,5 @@
 	</div>
 	<h:graphicImage id="bottom" library="img" name="bottom.png"/>
 	
-</body>
+</h:body>
 </html>

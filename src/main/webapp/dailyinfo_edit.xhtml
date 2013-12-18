@@ -14,7 +14,7 @@
 	<h:outputScript name="calendar.js" library="js" />
 </h:head>
 
-<body id="main_body">
+<h:body id="main_body">
 
 	<h:graphicImage id="top" library="img" name="top.png"/>
 	<div id="form_container">
@@ -25,7 +25,7 @@
 		
 		<ui:include src="menu_inc.xhtml" />
 		
-		<form id="form_743549" class="appnitro" method="post" action="daily-info-save">
+		<h:form id="form_743549" styleClass="appnitro" prependId="false">
 		
 			<div class="form_description">
 				<h2>Daily Information</h2>
@@ -34,10 +34,12 @@
 			
 			<ul>
 				<li id="li_1">
-					<label class="description" for="element_1">Date</label> 
+					<h:outputLabel styleClass="description" for="element_1_3">Date </h:outputLabel> 
 					<span>
-				 		<input id="element_1_3" name="dateCrisis" class="element text" size="10" maxlength="10" value="" type="text" />
-						<label for="element_1_3">MM/DD/YYYY</label>
+				 		<h:inputText id="element_1_3" name="dateCrisis" styleClass="element text" size="10" maxlength="10" value="#{dailyInfoC.dateHistory}">
+				 			<f:convertDateTime pattern="dd/MM/yyyy"/>
+				 		</h:inputText>
+						<h:outputLabel for="element_1_3">MM/DD/YYYY</h:outputLabel>
 					</span>
 					<span id="calendar_1"> 
 						<h:graphicImage id="cal_img_1" styleClass="datepicker" library="img" name="calendar.gif" alt="Pick a date."/>
@@ -55,46 +57,45 @@
 				</li>
 				
 				<li id="li_2">
-					<label class="description" for="element_2">Breakfast</label>
+					<h:outputLabel styleClass="description" for="element_2">Breakfast </h:outputLabel>
 					<div>
-						<textarea id="element_2" name="breakfast" class="element textarea small"></textarea>
+						<h:inputTextarea id="element_2" name="breakfast" styleClass="element textarea small" value="#{dailyInfoC.breakfast}" />
 					</div>
 				</li>
 				
 				<li id="li_3">
-					<label class="description" for="element_3">Lunch</label>
+					<h:outputLabel styleClass="description" for="element_3">Lunch</h:outputLabel>
 					<div>
-						<textarea id="element_3" name="lunch" class="element textarea small"></textarea>
+						<h:inputTextarea id="element_3" name="lunch" styleClass="element textarea small" value="#{dailyInfoC.lunch}" />
 					</div>
 				</li>
 				
 				<li id="li_4">
-					<label class="description" for="element_4">Dinner</label>
+					<h:outputLabel styleClass="description" for="element_4">Dinner</h:outputLabel>
 					<div>
-						<textarea id="element_4" name="dinner" class="element textarea small"></textarea>
+						<h:inputTextarea id="element_4" name="dinner" styleClass="element textarea small" value="#{dailyInfoC.dinner}" />
 					</div>
 				</li>
 				
 				<li id="li_5">
-					<label class="description" for="element_5">Other Foods </label>
+					<h:outputLabel styleClass="description" for="element_5">Other Foods </h:outputLabel>
 					<div>
-						<textarea id="element_5" name="others" class="element textarea small"></textarea>
+						<h:inputTextarea id="element_5" name="others" styleClass="element textarea small" value="#{dailyInfoC.others}" />
 					</div>
 				</li>
 				
 				<li id="li_6">
-					<label class="description" for="element_6">Activities</label>
+					<h:outputLabel styleClass="description" for="element_6">Activities</h:outputLabel>
 					<div>
-						<textarea id="element_6" name="dailyActivities" class="element textarea small"></textarea>
+						<h:inputTextarea id="element_6" name="dailyActivities" styleClass="element textarea small" value="#{dailyInfoC.dailyActivities}" />
 					</div>
 				</li>
 
 				<li class="buttons">
-					<input type="hidden" name="form_id" value="743549" /> 
-					<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+					<h:commandButton value="Register" action="#{dailyInfoC.save()}" id="saveForm" class="button_text" />
 				</li>
 			</ul>
-		</form>
+		</h:form>
 		<div id="footer">
 			<i>&copy;2013 All Rights Reserved.</i>
 		</div>
@@ -102,5 +103,5 @@
 	
 	<h:graphicImage id="bottom" library="img" name="bottom.png"/>
 	
-</body>
+</h:body>
 </html>

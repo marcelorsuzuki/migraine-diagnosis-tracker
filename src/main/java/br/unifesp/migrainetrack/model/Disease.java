@@ -26,9 +26,6 @@ public class Disease implements Serializable {
 
 	private String genetic;
 
-	public Disease() {
-	}
-
 	public short getId() {
 		return id;
 	}
@@ -60,7 +57,5 @@ public class Disease implements Serializable {
 	public void setGenetic(String genetic) {
 		this.genetic = genetic;
 	}
-
-	
 
 }

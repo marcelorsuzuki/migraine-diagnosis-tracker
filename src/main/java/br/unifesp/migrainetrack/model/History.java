@@ -45,9 +45,11 @@ public class History implements Serializable {
 	@JoinColumn(name="cod_pat")
 	private Patient patient;
 
-	public History() {
-	}
 
+	public History() {
+		dateHistory = Calendar.getInstance();
+	}
+	
 	public int getId() {
 		return id;
 	}

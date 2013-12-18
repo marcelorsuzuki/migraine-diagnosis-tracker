@@ -29,23 +29,31 @@
 				<h2>Disease</h2>
 				<p></p>
 			</div>						
-
-			<h:dataTable id="disease" columnClasses="list-column-center, list-column-right, list-column-center, list-column-right" 
-			             headerClass="list-header" rowClasses="list-row" styleClass="list-background" 
-			             value="#{diseaseC.listAll}" var="disease">   
-	  			
-	  			<h:column>
-	    			<f:facet name="header">Description</f:facet>
-	     			<h:outputText value="#{disease.description}"/>
-	  			</h:column>
-
-	  			<h:column>
-	    			<f:facet name="header">Genetic</f:facet>
-	     			<h:outputText value="#{disease.genetic}"/>
-	  			</h:column>
-
-  			</h:dataTable>
-
+			
+			<ul >
+				<li id="li_1" >
+					<h:outputLabel styleClass="description" for="element_1">Disease Name </h:outputLabel>
+					<div>
+						<h:inputText id="element_1" name="element_1" styleClass="element text medium" maxlength="255" value="#{disease.name}"/> 
+					</div> 
+				</li>		
+				
+				
+				<li id="li_2" >
+					<h:outputLabel styleClass="description" for="element_2">Genetic? </h:outputLabel>
+					<h:panelGroup layout="block">
+						<h:selectOneRadio value="#{disease.genetic}" styleClass="element radio">
+							<f:selectItem id="element_2_1" itemLabel="Yes" itemValue="1" />
+							<f:selectItem id="element_2_2" itemLabel="No" itemValue="2" />
+						</h:selectOneRadio>
+					</h:panelGroup>
+				</li>
+			
+				<li class="buttons">
+				    <input type="hidden" name="form_id" value="758792" />
+					<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+				</li>
+			</ul>
 		</h:form>
 			
 		<div id="footer">

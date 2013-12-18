@@ -2,13 +2,10 @@ package br.unifesp.migrainetrack.util;
 
 import javax.faces.context.FacesContext;
 
-public class FacesUtil<T> {
+public class FacesUtil {
 
-	private Class<T> classe;
-	
-	
-	public T getObjectSession(String className) {
+	public static Object getObjectSession(String el, Class<?> classe) {
 		FacesContext context = FacesContext.getCurrentInstance();
-		return (T) context.getApplication().evaluateExpressionGet(context, className, classe);
+		return context.getApplication().evaluateExpressionGet(context, el, classe);
 	}
 }

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+					  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core" 
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Crisis Registration</title>
+	<h:outputStylesheet name="view.css" library="css" />
+	<h:outputScript name="view.js" library="js" />
+	<h:outputScript name="calendar.js" library="js" />
+</h:head>
+
+<h:body id="main_body" >
+	
+	<h:graphicImage id="top" library="img" name="top.png"/>
+	<div id="form_container">
+	
+		<h1><a>Crisis Registration</a></h1>
+		
+		<ui:include src="menu_inc.xhtml" />
+		
+		<h:form id="form_743394" class="appnitro" prependId="false">
+			<div class="form_description">
+				<h2>Crisis Registration</h2>
+			</div>						
+		
+			<ul>
+				
+				<li id="li_1" >
+					<h:outputLabel styleClass="description" for="element_1">Date </h:outputLabel>
+					<span>
+				 		<h:inputText id="element_1_3" name="date" styleClass="element text" size="10" maxlength="10" value="#{crisisC.date}" />
+						<label for="element_1_3">MM/DD/YYYY</label>
+					</span>
+					<span id="calendar_1">
+						<h:graphicImage id="cal_img_1" styleClass="datepicker" library="img" name="calendar.gif" alt="Pick a date."/>
+					</span>
+					<script type="text/javascript">
+						Calendar.setup({
+							inputField	 : "element_1_3",
+							baseField    : "element_1",
+							displayArea  : "calendar_1",
+							button		 : "cal_img_1",
+							ifFormat	 : "%B %e, %Y",
+							onSelect	 : selectDate
+						});
+					</script>
+				</li>		
+				
+				<li id="li_2" >
+					<h:outputLabel styleClass="description" for="element_2">Intensity </h:outputLabel>
+					<h:panelGroup>
+						<h:selectOneRadio value="#{crisisC.intensity}" styleClass="element radio">
+						    <f:selectItem id="element_2_1" itemLabel="Low" itemValue="1" />
+						    <f:selectItem id="element_2_2" itemLabel="Medium" itemValue="2" />
+						    <f:selectItem id="element_2_3" itemLabel="Strong" itemValue="3" />
+						</h:selectOneRadio>		
+					</h:panelGroup>
+				</li>		
+				
+				<li id="li_3" >
+					<h:outputLabel styleClass="description" for="element_3">Nausea </h:outputLabel>
+					<h:panelGroup>
+						<h:selectOneRadio value="#{crisisC.nausea}" styleClass="element radio">
+							<f:selectItem id="element_3_1" itemLabel="Yes" itemValue="1" />
+							<f:selectItem id="element_3_2" itemLabel="No" itemValue="2" />
+						</h:selectOneRadio>
+					</h:panelGroup>
+				</li>		
+				
+				<li id="li_4" >
+					<h:outputLabel styleClass="description" for="element_4">Time </h:outputLabel>
+					<h:panelGroup layout="block">
+						<h:selectOneMenu styleClass="element select small" id="element_4" value="#{crisisC.timer}">
+							<f:selectItem itemLabel="" />
+							<f:selectItem itemLabel="Morning" itemValue="0" />
+							<f:selectItem itemLabel="Afternoon" itemValue="1" />
+							<f:selectItem itemLabel="Evening" itemValue="2" />
+						</h:selectOneMenu>						
+					</h:panelGroup> 
+				</li>
+					
+				<li class="buttons">
+					<input type="hidden" name="form_id" value="743394" />
+					    
+					<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+				</li>
+			</ul>
+		</h:form>
+			
+		<div id="footer">
+			<i>&copy;2013 All Rights Reserved.</i>
+		</div>
+	</div>
+	<h:graphicImage id="bottom" library="img" name="bottom.png"/>
+	
+</h:body>
+</html>

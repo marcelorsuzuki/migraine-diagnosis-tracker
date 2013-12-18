@@ -80,6 +80,12 @@ public class Patient {
 	@OneToMany(mappedBy="patient")
 	private List<History> historyList;
 
+	
+	public Patient() {
+		birthday = Calendar.getInstance();
+		maritalStatus = new MaritalStatus();
+	}
+	
 	public Long getId() {
 		return id;
 	}

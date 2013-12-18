@@ -31,6 +31,7 @@ public class Authorizer implements PhaseListener {
 	@Override
 	public void afterPhase(PhaseEvent event) {
 		
+		
 		FacesContext context = event.getFacesContext();
 		
 		//If the view is Login, it's not necessary to check if the user is logged.
@@ -47,7 +48,6 @@ public class Authorizer implements PhaseListener {
 			
 			context.renderResponse();
 		}
-		
 		
 	}
 

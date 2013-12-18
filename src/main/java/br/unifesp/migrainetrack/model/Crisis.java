@@ -76,10 +76,17 @@ public class Crisis {
 	public String getNausea() {
 		return nausea;
 	}
-
+	
 	public void setNausea(String nausea) {
 		this.nausea = nausea;
 	}
 	
-	
+	public String getNauseaYesNo() {
+		if (nausea.equals("Y")) {
+			return "Yes";
+		}
+		else {
+			return "No";
+		}
+	}
 }

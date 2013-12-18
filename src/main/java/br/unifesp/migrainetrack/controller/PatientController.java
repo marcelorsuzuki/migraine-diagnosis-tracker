@@ -1,5 +1,5 @@
 package br.unifesp.migrainetrack.controller;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -21,10 +21,11 @@ public class PatientController {
 		patient = new Patient(); 
 	}
 	
-	public String save(Patient patient) {
+	public String save() {
+		System.out.println("Ola");
 		PatientDao dao = new PatientDao(new JpaUtil().getEntityManager());
 		dao.insert(patient);
-		return "patient";
+		return "login?faces-redirect=true";
 	}
 	
 	public List<MaritalStatus> getMaritalList() {
@@ -48,12 +49,12 @@ public class PatientController {
 		patient.setName(name);
 	}
 
-	public Calendar getBirthday() {
-		return patient.getBirthday();
+	public Date getBirthday() {
+		return patient.getBirthday().getTime();
 	}
 
-	public void setBirthday(Calendar birthday) {
-		patient.setBirthday(birthday);
+	public void setBirthday(Date birthday) {
+		patient.getBirthday().setTime(birthday);;
 	}
 
 	public String getGender() {
@@ -110,6 +111,16 @@ public class PatientController {
 
 	public void setMaritalStatus(MaritalStatus maritalStatus) {
 		patient.setMaritalStatus(maritalStatus);
+	}
+
+	public long getMaritalId() {
+		return patient.getMaritalStatus().getId();
+	}
+ 
+	public void setMaritalId(long id) {
+		Dao<MaritalStatus> dao = new Dao<>(MaritalStatus.class, new JpaUtil().getEntityManager());
+		MaritalStatus m = dao.loadById(id);
+		patient.setMaritalStatus(m);
 	}
 	
 	public City getCity() {
